@@ -1,6 +1,6 @@
 # TodoList
 
-This application enables you to create tasks associated with an address concerning our company. You can mark tasks as complete or delete them.
+This application enables you to create tasks. You can mark tasks as complete or delete them.
 
 The stack used includes:
 - React
