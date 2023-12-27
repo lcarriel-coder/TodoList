@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# TodoList
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application enables you to create tasks associated with an address concerning our company. You can mark tasks as complete or delete them.
 
-Currently, two official plugins are available:
+The stack used includes:
+- React
+- Vite
+- TypeScript.
+- CSS.
+- MaterialUI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Steps to Use the Application
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 1. Clone the Project
 
-- Configure the top-level `parserOptions` property like this:
+### 2. Install Dependencies
+npm install
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### 4. Initialize the Application
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+npm run dev
+
+### 5.  Access the Application
+
+Open your browser and go to http://localhost:5173.
+
+## Project Screenshots
+![Captura de pantalla](https://github.com/lcarriel-coder/Location/blob/main/pictures/Screenshot_442.png)
+![Captura de pantalla](https://raw.githubusercontent.com/lcarriel-coder/Location/main/pictures/Screenshot_443.png)
+
+![Captura de pantalla](https://raw.githubusercontent.com/lcarriel-coder/Location/main/pictures/Screenshot_446.png)
+![Captura de pantalla](https://github.com/lcarriel-coder/Location/blob/main/pictures/Screenshot_462.png?raw=true)
