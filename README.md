@@ -26,8 +26,5 @@ npm run dev
 Open your browser and go to http://localhost:5173.
 
 ## Project Screenshots
-![Captura de pantalla](https://github.com/lcarriel-coder/Location/blob/main/pictures/Screenshot_442.png)
-![Captura de pantalla](https://raw.githubusercontent.com/lcarriel-coder/Location/main/pictures/Screenshot_443.png)
+![Captura de pantalla](https://raw.githubusercontent.com/lcarriel-coder/TodoList/main/imagenes/dev.png)
 
-![Captura de pantalla](https://raw.githubusercontent.com/lcarriel-coder/Location/main/pictures/Screenshot_446.png)
-![Captura de pantalla](https://github.com/lcarriel-coder/Location/blob/main/pictures/Screenshot_462.png?raw=true)
