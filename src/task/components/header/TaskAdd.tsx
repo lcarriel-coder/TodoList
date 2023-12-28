@@ -1,58 +1,45 @@
+import Button from "@mui/material/Button";
+import { TaskAddProps } from "../../../interfaces";
+import { TextField,  Grid } from "@mui/material";
+import { useUtils } from "../../../hooks";
 
-import { useState } from 'react';
-import Button from '@mui/material/Button';
-import { TaskAddProps, TaskItem } from '../../../interfaces';
-import { TextField,InputAdornment,Grid} from '@mui/material';
-
-export const TaskAdd: React.FC<TaskAddProps> = ({setListTask }) => {
-
-
-  const [taskInput, setTaskInput] = useState<string>('');
-
-  const handleAddTask = () => {
-    if (taskInput.trim() !== '') {
-      const newTask: TaskItem = {
-        taskId: Math.floor(Math.random() * 1000), 
-        detail: taskInput,
-        date: new Date().toISOString().slice(0, 10), 
-        isComplete: false,
-      };
-
-      setListTask((prevList) => [...prevList, newTask]);
-      setTaskInput('');
-    }
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTaskInput(event.target.value);
-  };
+export const TaskAdd: React.FC<TaskAddProps> = ({ handleAddTask }) => {
+  const { taskInput, setTaskInput, handleInputChange } = useUtils();
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      handleAddTask();
+    if (event.key === "Enter") {
+      handleAddTask(taskInput, setTaskInput);
     }
   };
 
-
   return (
-    <Grid mb={4}>
-    <TextField 
-      label="Nueva tarea"
-      variant="outlined"
-      value={taskInput}
-      onChange={handleInputChange}
-      fullWidth
-      onKeyDown={handleKeyDown}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end">
-            <Button variant="contained" onClick={handleAddTask}>
-              Agregar tarea
-            </Button>
-          </InputAdornment>
-        ),
-      }}
-    />
+    <Grid container alignItems="flex-end"  mb={4}>
+      <Grid item xs={12} sm={8}>
+        <TextField 
+          size="small"
+          label="Nueva tarea"
+          variant="outlined"
+          value={taskInput}
+          onChange={handleInputChange}
+          fullWidth
+          onKeyDown={handleKeyDown}
+          sx={{
+            height: '40px',
+          }}
+        />
+      </Grid>
+      <Grid item xs={12} sm={4}>
+        <Button 
+          variant="contained" 
+          onClick={() => handleAddTask(taskInput, setTaskInput)}
+          fullWidth
+          sx={{
+            height: '40px',
+          }}
+        >
+          Agregar 
+        </Button>
+      </Grid>
     </Grid>
-  )
-}
+  );
+};

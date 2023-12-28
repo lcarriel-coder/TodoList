@@ -1,10 +1,14 @@
 import { Checkbox ,IconButton,Typography} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { TaskProps } from "../../interfaces";
+import { useUtils } from "../../hooks";
 
 export const Task: React.FC<TaskProps> = ({ data, setListTask }) => {
 
+    const { notification } = useUtils();
+
   const handleCompleteToggle = () => {
+    
     setListTask((prevList) => {
       return prevList.map((task) => {
         if (task.taskId === data.taskId) {
@@ -16,12 +20,17 @@ export const Task: React.FC<TaskProps> = ({ data, setListTask }) => {
         return task;
       });
     });
+
+    notification(`Se cambio el estado de la tarea exitosamente`);
+
   };
+  
 
   const handleDelete = () => {
     setListTask((prevList) =>
       prevList.filter((task) => task.taskId !== data.taskId)
     );
+    notification('Tarea eliminada exitosamente');
   };
 
   return (

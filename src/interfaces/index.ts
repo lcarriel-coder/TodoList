@@ -6,7 +6,7 @@ export interface TaskItem {
   }
 
   export interface TaskAddProps {
-    setListTask: React.Dispatch<React.SetStateAction<TaskItem[]>>;
+    handleAddTask: (taskDetail: string, setTaskInput: React.Dispatch<React.SetStateAction<string>>) => void;
   }
 
   export interface TaskListProps {
@@ -21,3 +21,7 @@ export interface TaskItem {
   }
 
 
+
+  export interface UtilsProps {
+    setListTask: React.Dispatch<React.SetStateAction<TaskItem[]>>;
+  }
